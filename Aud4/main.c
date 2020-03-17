@@ -3,7 +3,7 @@
 
 typedef struct
 {
-	double value;
+	int value;
 	struct Node* next;
 }Node;
 
@@ -15,7 +15,12 @@ void push(Node** head, int data) {
 	(*head) = tmp;
 }
 
-//удалить элемент из списка
+void createList()
+{
+
+}
+
+//удалить элемент из списка на который показывает head 
 int pop(Node** head) {
     Node* prev = NULL;
     int val;
@@ -29,8 +34,43 @@ int pop(Node** head) {
     return val;
 }
 
+//адресс n узла 
+Node* getNth(Node* head, int n) {
+    int counter = 0;
+    while (counter < n && head) {
+        head = head->next;
+        counter++;
+    }
+    return head;
+}
+
+// адресс последнего узла 
+Node* getLast(Node* head) {
+    if (head == NULL) {
+        return NULL;
+    }
+    while (head->next) {
+        head = head->next;
+    }
+    return head;
+}
+
+// вывести список 
+void printLinkedList(Node* head) {
+    while (head) {
+        printf("%d ", head->value);
+        head = head->next;
+    }
+    printf("\n");
+}
+
 int main()
 {
 	srand(time(NULL));
 	Node* head = NULL;
+    for (int i = 0; i < 10; i++)
+    {        
+        push(&head, i);
+    }
+    printLinkedList(head);
 }
