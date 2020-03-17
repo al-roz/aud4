@@ -3,12 +3,12 @@
 
 typedef struct
 {
-	int value;
+	double value;
 	struct Node* next;
 }Node;
 
 //добавить элемент в список
-void push(Node** head, int data) {
+void push(Node** head, double data) {
 	Node* tmp = (Node*)malloc(sizeof(Node));
 	tmp->value = data;
 	tmp->next = (*head);
@@ -58,7 +58,7 @@ Node* getLast(Node* head) {
 // вывести список 
 void printLinkedList(Node* head) {
     while (head) {
-        printf("%d ", head->value);
+        printf("%.2fl ", head->value);
         head = head->next;
     }
     printf("\n");
@@ -66,11 +66,17 @@ void printLinkedList(Node* head) {
 
 int main()
 {
-	srand(time(NULL));
-	Node* head = NULL;
-    for (int i = 0; i < 10; i++)
-    {        
-        push(&head, i);
-    }
-    printLinkedList(head);
+	//srand(time(NULL));
+	//Node* head = NULL;
+ //   for (int i = 0; i < 10; i++)
+ //   {        
+ //       //double x = rand() % 10 ;
+ //       //x += 1 / x;
+ //       push(&head, i);
+ //   }
+ //   //Node* tem = getNth(head,7);
+ //   //printf("%fl\n", tem->value);
+
+ //   printLinkedList(head);
+
 }
