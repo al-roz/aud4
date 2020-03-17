@@ -87,12 +87,17 @@ int main()
         printf("%.3f", M_PI * R * R);
     else
     {
-        float s = 2 * ((sqrt((R*R - (a / 2) * (a / 2))) * (a / 2)) / R) / R;
-        //printf("%f\n",s);
-        //printf("%f\n", asin(s));
-       // printf("%f\n%f\n", M_PI * R * R, R * R * (asin(s) - s));
-        ans = M_PI * R * R - 2 * R * R * (asin(s) - s);
-        printf("%.3f", ans);
+        if (a * sqrt(2) < R)
+            printf("%.3f", a * a);
+        else
+        {
+            float s = 2 * ((sqrt((R * R - (a / 2) * (a / 2))) * (a / 2)) / R) / R;
+            //printf("%f\n",s);
+            //printf("%f\n", asin(s));
+           // printf("%f\n%f\n", M_PI * R * R, R * R * (asin(s) - s));
+            ans = M_PI * R * R - 2 * R * R * (asin(s) - s);
+            printf("%.3f", ans);
+        }
     }
     
 
