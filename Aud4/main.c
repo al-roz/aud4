@@ -84,15 +84,15 @@ int main()
     float ans , R , a;
     scanf_s("%f%f", &a, &R);
     if (a / 2 >= R)
-        printf("%f", M_PI * R * R);
+        printf("%.3f", M_PI * R * R);
     else
     {
-        float s = 2 * ((sqrt((R - (a / 2)) * (a / 2)) * (a / 2)) / R) / R;
-        printf("%f\n",s);
-        printf("%f\n", asin(s));
-        printf("%f\n%f\n", M_PI * R * R, R * R * (asin(s) - s));
+        float s = 2 * ((sqrt((R*R - (a / 2) * (a / 2))) * (a / 2)) / R) / R;
+        //printf("%f\n",s);
+        //printf("%f\n", asin(s));
+       // printf("%f\n%f\n", M_PI * R * R, R * R * (asin(s) - s));
         ans = M_PI * R * R - 2 * R * R * (asin(s) - s);
-        printf("%f", ans);
+        printf("%.3f", ans);
     }
     
 
