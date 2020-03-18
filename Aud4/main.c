@@ -87,7 +87,7 @@ int main()
         printf("%.3f", M_PI * R * R);
     else
     {
-        if (a * sqrt(2) < R)
+        if ((a/2) * sqrt(2) < R)
             printf("%.3f", a * a);
         else
         {
